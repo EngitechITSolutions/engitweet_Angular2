@@ -5,7 +5,7 @@ import {SearchComponent} from './search.component';
   moduleId: module.id,
   selector: 'header_row',
   templateUrl: 'header.component.html',
-  styleUrls: ['header.component.css'],
+  styleUrls: ['app.css','header.component.css'],
   directives: [SearchComponent]
 })
 export class HeaderComponent implements OnInit {

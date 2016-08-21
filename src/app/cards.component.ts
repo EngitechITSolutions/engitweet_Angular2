@@ -6,7 +6,7 @@ import {TweetService} from './tweet.service';
   moduleId: module.id,
   selector: 'cardsrepeater',
   templateUrl: 'cards.component.html',
-  styleUrls: ['cards.component.css'],
+  styleUrls: ['app.css','cards.component.css'],
   providers: [TweetService]
   
 })
