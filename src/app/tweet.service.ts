@@ -13,7 +13,7 @@ export class TweetService {
     const headers =new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');
-    return this.http.get('http://localhost:50358/engitweet/values',{headers: headers})
+    return this.http.get('http://www.engitechitsolutions.com/API2/engitweet/values',{headers: headers})
     .map((response:Response) => response.json());
    /* .subscribe((res) =>{
         this.obj=res;
