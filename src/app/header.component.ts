@@ -14,5 +14,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onNotify(searchValue:string):void{
+        console.log(searchValue);  
+      }
 }

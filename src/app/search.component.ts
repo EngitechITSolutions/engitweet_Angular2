@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -8,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() {}
 
   ngOnInit() {
   }
 
+  SearchTweets(inputSearch:string)
+  {
+    console.log(inputSearch);
+    this.notify.emit('parent: '+ inputSearch);
+  }
 }

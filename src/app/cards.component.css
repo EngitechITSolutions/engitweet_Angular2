@@ -4,7 +4,7 @@
   margin-bottom: 0.75rem;
   background-color: #fff;
   border-radius: 0.25rem;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 2px solid rgba(0, 0, 0, 0.125);
 }
 
 .card-block {
@@ -210,8 +210,8 @@
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
-  height: 75%;
-  width: 75%;
+  height: 100%;
+  width: 100%;
   min-width: 25%;
   min-height: 25%;
   margin-top:20px;
