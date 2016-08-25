@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import {SearchComponent} from './search.component';
 
 @Component({
@@ -8,13 +8,25 @@ import {SearchComponent} from './search.component';
   styleUrls: ['header.component.css'],
   directives: [SearchComponent]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent{
 
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+  valueToSearch:string;
   constructor() {}
 
-  ngOnInit() {
+  onNotify(searchValue:string):void
+  {
+    //Propagamos el valor de búsqueda hacia el padre (App)
+        this.valueToSearch=searchValue;
+        this.PropagateValue();
+    //
+        console.log('headerComponent: ' + this.valueToSearch);  
   }
-  onNotify(searchValue:string):void{
-        console.log(searchValue);  
-      }
+
+  PropagateValue()
+  {
+    //Propagamos el valor de búsqueda hacia el padre (App)
+      this.notify.emit(this.valueToSearch);
+    //
+  }
 }

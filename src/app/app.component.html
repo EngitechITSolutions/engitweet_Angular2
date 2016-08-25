@@ -7,9 +7,11 @@
                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
                 <div class="row">
                     
-                    <header_row ></header_row>
+                    <header_row (notify)='onNotify($event)'></header_row>
                 </div>
-                        <cardsrepeater [SearchString]="'proyectosnubelo'" ></cardsrepeater>
+
+                <p #filterValue>{{valueToFilter}}</p>                
+                    <cardsrepeater SearchString={{filterValue.value}}></cardsrepeater>
                 </div>
             </div>
         </div>

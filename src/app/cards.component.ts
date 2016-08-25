@@ -12,11 +12,27 @@ import {TweetService} from './tweet.service';
 })
 export class CardsComponent implements OnInit {
     
-    @Input() SearchString:string;
-    items: any[];    
-  constructor(private tweetsvc: TweetService) {}
-
+  @Input() SearchString:string;
+  items: any[];    
+  constructor(private tweetsvc: TweetService) 
+  {
+    console.log('ctor '+ this.SearchString);
+  }
+  LaunchSearch(searchstringvalue:string)
+  {
+    console.log('input value '+ searchstringvalue);
+    this.tweetsvc.getData(searchstringvalue)
+     .subscribe((res:any) =>{       
+        this.items=res;
+        console.log(res);        
+    },
+    (err)=>console.log(err),
+    ()=>console.log("Done"));
+  }
+  
+  
   ngOnInit() {
+    console.log("value "+this.SearchString);
     this.tweetsvc.getData(this.SearchString)
      .subscribe((res:any) =>{       
         this.items=res;

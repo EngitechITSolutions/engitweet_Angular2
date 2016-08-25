@@ -12,13 +12,20 @@ declare var jQuery:any;
 })
 export class AppComponent implements AfterViewInit  {
   title = 'app works!';
+  valueToFilter:string;
 
   constructor(private _elRef: ElementRef) {}
-    ngAfterViewInit():any {      
+    /*ngAfterViewInit():any {      
       var nav=jQuery(this._elRef.nativeElement).find('#navigation');
        jQuery(this._elRef.nativeElement).find('[data-toggle="offcanvas"]').on('click',function(){
             nav.toggleClass('hidden-xs');
         });
+    }*/
+ ngAfterViewInit(){}
+    onNotify(valueToSearch:string):void{
+        console.log('app '+ valueToSearch);
+        this.valueToFilter=valueToSearch;
+        console.log('valueToFilter '+ this.valueToFilter);
     }
- 
+
 }
